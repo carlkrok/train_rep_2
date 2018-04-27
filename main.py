@@ -1,5 +1,6 @@
 import our_own_cnn
 import our_own_cnn_2
+import our_own_cnn_3
 import load_dataset_simulator
 from keras.models import load_model
 from keras.callbacks import ModelCheckpoint
@@ -15,10 +16,10 @@ import matplotlib.pyplot as plt
 def main():
 
     print("Creating model...")
-    our_own_cnn_2.our_own_cnn_2()
+    our_own_cnn_3.our_own_cnn_3()
 
     print("Loading model...")
-    model = load_model("our_own_cnn_2")
+    model = load_model("our_own_cnn_3")
 
     csv_logger = CSVLogger('log_friday.csv', append=True, separator=';')
     checkpoint = ModelCheckpoint('curr_best_model.h5', monitor='val_loss',verbose=0,save_best_only=True, mode='auto') #Saved_models
@@ -46,27 +47,33 @@ def main():
 
             np_steering_tot = np.concatenate((np_steering_tot, np_steering))
 
-            np_images_time = np.zeros((int(len(np_images)/3), 3,64,64,3), dtype=float, order='C')
-            np_steering_time = np.zeros((int(len(np_steering/3)),3,1), dtype=float, order='C')
+            #np_images_time = np.zeros((int(len(np_images)/3), 3,64,64,3), dtype=float, order='C')
+            #np_steering_time = np.zeros((int(len(np_steering)/3),3,1), dtype=float, order='C')
 
-            for step_index in range(len(np_images), step = 3):
-                for time_index in range(3):
-                    np_images_time[int(step_index/3)][time_index] = np_images[step_index+time_index]
-                    np_steering_time[int(step_index/3)][time_index] = np_steering[step_index+time_index]
+            #for step_index in range(0,len(np_images),3):
+            #    for time_index in range(3):
+            #       np_images_time[int(step_index/3)][time_index] = np_images[step_index+time_index]
+            #        np_steering_time[int(step_index/3)][time_index] = np_steering[step_index+time_index]
 
             if first_iter:
                 first_iter = False
             else:
                 model = load_model('curr_best_model.h5')
 
+            #print("--- SHAPE OF np_images: ", np_images.shape)
+            #print("--- SHAPE OF np_steering: ", np_steering.shape)
+
+            #print("--- SHAPE OF np_images_time: ", np_images_time.shape)
+            #print("--- SHAPE OF np_steering_time: ", np_steering_time.shape)
+
             print("Training the model...")
-            history = model.fit(x=np_images_time, y=np_steering_time, epochs=40, batch_size=3, callbacks=[checkpoint, csv_logger], validation_data=(np_val_images, np_val_steering))
+            history = model.fit(x=np_images, y=np_steering, epochs=40, batch_size=3, callbacks=[checkpoint, csv_logger], validation_data=(np_val_images, np_val_steering)) #
 
 
 
 
     print("Saving the model...")
-    model.save("our_own_cnn_1_trained.h5")
+    model.save("our_own_cnn_3_trained.h5")
 
     print("Saving the steering angles...")
     np.save("np_steering_tot", np_steering_tot)
