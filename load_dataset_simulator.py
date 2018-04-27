@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import numpy as np
 
-import cv2
+import opencv2 as cv2
 #from scipy import misc
 #from skimage.transform import resize
 
