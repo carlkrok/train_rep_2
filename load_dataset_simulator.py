@@ -58,7 +58,7 @@ def load_dataset(camera_angle,lap,aug_trans = True,aug_bright = True, aug_flip =
             shape = image.shape
 
             image = image[math.floor(shape[0]/4):shape[0]-25, 0:shape[1]]
-            image = np.resize(image, (64, 64), anti_aliasing=True)#cv2.resize(image,(64,64), interpolation=cv2.INTER_AREA)
+            image = np.resize(image, (64, 64))#cv2.resize(image,(64,64), interpolation=cv2.INTER_AREA)
 
             steer = data_files['steer'][i_elem]
             #if abs(steer) < 0.10 and camera_angle == "center":
