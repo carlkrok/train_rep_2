@@ -5,9 +5,17 @@ import numpy as np
 
 #import cv2
 #from scipy import misc
-from scimage import io
-from skimage.transform import resize
-from scimage.color import rgb2hsv, hsv2rgb
+#from scimage import io
+#from skimage.transform import resize
+#from scimage.color import rgb2hsv, hsv2rgb
+
+from keras.preprocessing import image as imgtool
+
+import matplotlib.pyplot as plt
+import numpy as np
+img = np.random.rand(224,224,3)
+plt.imshow(img)
+plt.show()
 
 import math
 import matplotlib.pyplot as plt
@@ -54,15 +62,17 @@ def load_dataset(camera_angle,lap,aug_trans = True,aug_bright = True, aug_flip =
 
     for i_elem in range(data_size):
 
-        image = io.imread(data_files[camera_angle][i_elem].strip())
+        image = imgtool.load_img(data_files[camera_angle][i_elem].strip(), target_size=(64, 64))
+        
+        #io.imread(data_files[camera_angle][i_elem].strip())
         #cv2.imread(data_files[camera_angle][i_elem].strip())
 
         if image is not None:
 
             shape = image.shape
 
-            image = image[math.floor(shape[0]/4):shape[0]-25, 0:shape[1]]
-            image = resize(image, (64, 64, 3), anti_aliasing=True)
+            #image = image[math.floor(shape[0]/4):shape[0]-25, 0:shape[1]]
+            #image = resize(image, (64, 64, 3), anti_aliasing=True)
             #cv2.resize(image,(64,64), interpolation=cv2.INTER_AREA)
 
             steer = data_files['steer'][i_elem]
