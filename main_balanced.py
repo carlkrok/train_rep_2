@@ -31,7 +31,7 @@ def main():
     np_val_images = np.load("np_val_images_balanced.npy")
     np_val_steering = np.load("np_val_steering_angles_log.npy")
     
-    history = model.fit(x=np_images, y=np_steering, epochs=40, batch_size=3, callbacks=[checkpoint, csv_logger], validation_data=(np_val_images, np_val_steering)) 
+    history = model.fit(x=np_images, y=np_steering, epochs=200, batch_size=10, callbacks=[checkpoint, csv_logger], validation_data=(np_val_images, np_val_steering)) 
 
     print("Saving the model...")
     model.save("our_own_cnn_3_trained.h5")
