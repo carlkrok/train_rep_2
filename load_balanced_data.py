@@ -3,7 +3,7 @@ import math
 import matplotlib
 from importlib import reload
 from matplotlib import pyplot as plt
-%matplotlib inline
+#%matplotlib inline
 import load_dataset_simulator
 reload(load_dataset_simulator)
 
