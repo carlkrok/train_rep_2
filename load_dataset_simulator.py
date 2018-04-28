@@ -5,8 +5,9 @@ import numpy as np
 
 #import cv2
 #from scipy import misc
-from scipy import io
+from scimage import io
 from skimage.transform import resize
+from scimage.color import rgb2hsv, hsv2rgb
 
 import math
 import matplotlib.pyplot as plt
