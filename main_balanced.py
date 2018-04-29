@@ -16,8 +16,8 @@ import matplotlib.pyplot as plt
 
 def main():
 
-    print("Creating model...")
-    our_own_cnn_4.our_own_cnn_4()
+    #print("Creating model...")
+    #our_own_cnn_4.our_own_cnn_4()
 
     print("Loading model...")
     model = load_model("our_own_cnn_4")
