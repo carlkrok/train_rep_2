@@ -15,25 +15,27 @@ import matplotlib.pyplot as plt
 
 def main():
 
-    print("Creating model...")
-    our_own_cnn_3.our_own_cnn_3()
+    #print("Creating model...")
+    #our_own_cnn_3.our_own_cnn_3()
 
     print("Loading model...")
-    model = load_model("our_own_cnn_3")
+    #model = load_model("our_own_cnn_3")
+    model = load_model("saturday_best_model")
+    model.summary()
 
     csv_logger = CSVLogger('log_friday.csv', append=True, separator=';')
     checkpoint = ModelCheckpoint('curr_best_model.h5', monitor='val_loss',verbose=0,save_best_only=True, mode='auto') #Saved_models
 
-    np_images = np.load("np_images_balanced.npy")
-    np_steering = np.load("np_steering_angles_log.npy")
+    np_images_train = np.load("np_images_balanced.npy")
+    np_steering_train = np.load("np_steering_angles_log.npy")
     
-    np_val_images = np.load("np_val_images_balanced.npy")
-    np_val_steering = np.load("np_val_steering_angles_log.npy")
+    np_val_images_train = np.load("np_val_images_balanced.npy")
+    np_val_steering_train = np.load("np_val_steering_angles_log.npy")
     
-    history = model.fit(x=np_images, y=np_steering, epochs=200, batch_size=10, callbacks=[checkpoint, csv_logger], validation_data=(np_val_images, np_val_steering)) 
+    history = model.fit(x=np_images_train, y=np_steering_train, epochs=200, batch_size=10, callbacks=[checkpoint, csv_logger], validation_data=(np_val_images_train, np_val_steering_train)) 
 
     print("Saving the model...")
-    model.save("our_own_cnn_3_trained.h5")
+    model.save("our_own_cnn_3_trained_sunday.h5")
 
 
     print("Finished!")
