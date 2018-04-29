@@ -20,7 +20,7 @@ def main():
     #our_own_cnn_4.our_own_cnn_4()
 
     print("Loading model...")
-    model = load_model("our_own_cnn_4")
+    model = load_model("our_own_cnn_4.h5")
     #model = load_model("saturday_best_model.h5")
     model.summary()
 
