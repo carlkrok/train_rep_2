@@ -63,6 +63,6 @@ def our_own_cnn_4():
     model.compile(loss='mean_squared_error', optimizer=slow_adam, metrics=['mse'])
     model.summary()
 
-    model.save("our_own_cnn_4")
+    model.save("our_own_cnn_4.h5")
 
     return 0;
