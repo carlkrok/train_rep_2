@@ -13,7 +13,7 @@ from keras import backend as K
 import h5py
 
 
-def our_own_cnn_3():
+def our_own_cnn_4():
 
     img_input = Input(shape=(64, 64, 3))
 
@@ -63,6 +63,6 @@ def our_own_cnn_3():
     model.compile(loss='mean_squared_error', optimizer=slow_adam, metrics=['loss'])
     model.summary()
 
-    model.save("our_own_cnn_3")
+    model.save("our_own_cnn_4")
 
     return 0;
