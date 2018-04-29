@@ -53,7 +53,7 @@ def our_own_cnn_4():
     fc1 = Dropout(0.5)(fc1)
 
     fc2 = Dense(10, activation='tanh')(fc1)
-    fc2 = BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001, center=True, scale=True, beta_initializer='zeros', gamma_initializer='ones', moving_mean_initializer='zeros', moving_variance_initializer='ones', beta_regularizer=None, gamma_regularizer=None, beta_constraint=None, gamma_constraint=None)(fc2)
+    #fc2 = BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001, center=True, scale=True, beta_initializer='zeros', gamma_initializer='ones', moving_mean_initializer='zeros', moving_variance_initializer='ones', beta_regularizer=None, gamma_regularizer=None, beta_constraint=None, gamma_constraint=None)(fc2)
     
     prediction = Dense(1)(fc2)
 
