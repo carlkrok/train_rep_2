@@ -27,9 +27,11 @@ def main():
     csv_logger = CSVLogger('log_sunday.csv', append=True, separator=';')
     checkpoint = ModelCheckpoint('curr_best_model.h5', monitor='val_loss',verbose=0,save_best_only=True, mode='auto') #Saved_models
 
+    print("Loading training dataset...")
     np_images_train = np.load("np_images_balanced.npy")
     np_steering_train = np.load("np_steering_angles_log.npy")
     
+    print("Loading validation dataset...")
     np_val_images_train = np.load("np_val_images_balanced.npy")
     np_val_steering_train = np.load("np_val_steering_angles_log.npy")
     
