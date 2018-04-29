@@ -20,7 +20,7 @@ def main():
 
     print("Loading model...")
     #model = load_model("our_own_cnn_3")
-    model = load_model("saturday_best_model")
+    model = load_model("saturday_best_model.h5")
     model.summary()
 
     csv_logger = CSVLogger('log_friday.csv', append=True, separator=';')
