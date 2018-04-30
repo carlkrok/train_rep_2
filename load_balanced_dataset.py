@@ -62,7 +62,7 @@ def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright
     steer = data_files['steer'][counter]
 
     # To ensure no images with angles larger than abs(1) are added to np_images
-    if camera_angle == "left" and steer > 0.8:True
+    if camera_angle == "left" and steer > 0.8:
         continue
         skip_count += 1
     elif camera_angle == "right" and steer < -0.8:
@@ -71,7 +71,7 @@ def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright
 
     if camera_angle == "left":
         steer += 0.2
-    elif camera_angle == "right":load_dataset
+    elif camera_angle == "right":
         steer -= 0.2
 
     # Change brightness
