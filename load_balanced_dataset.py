@@ -33,7 +33,7 @@ def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright
         csv_path = 'Datasets/driving_log_mond4.csv'
     elif lap == "test":
         csv_path = 'Datasets/dri2ving_log_test.csv'
-    else:load_dataset
+    else:
         print("No dataset loaded")
 
 
