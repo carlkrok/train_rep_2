@@ -55,7 +55,7 @@ def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright
 
     counter = 0
 
-    while image is None:2
+    while image is None:
         counter += 1
         image = cv2.imread(data_files[camera_angle][counter].strip())
     rgb = bgr[...,::-1]
