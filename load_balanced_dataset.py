@@ -13,7 +13,7 @@ def get_index(angle):
     return int((angle+1)/0.02)
 
 
-def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright = True, aug_flip = True, aug_add = True):
+def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright = True, aug_flip = True, aug_add = False):
 
     LIMIT = 300
     LARGE_INDEX = 101
