@@ -105,7 +105,7 @@ def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright
     for i_elem in range(counter, data_size):
 
         image = cv2.imread(data_files[camera_angle][i_elem].strip())
-        image = image[...,::-1]2
+        image = image[...,::-1]
 
         if image is not None:
 
