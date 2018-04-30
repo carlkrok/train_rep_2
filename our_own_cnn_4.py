@@ -59,7 +59,7 @@ def our_own_cnn_4():
 
     model = Model(inputs=img_input, outputs=prediction)
 
-    slow_adam = Adam(lr=0.001)
+    slow_adam = Adam(lr=0.0001)
     model.compile(loss='mean_squared_error', optimizer=slow_adam, metrics=['mse'])
     model.summary()
 
