@@ -15,7 +15,7 @@ def get_index(angle):
 
 def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright = True, aug_flip = True, aug_add = False):
 
-    LIMIT = 300
+    LIMIT = 200
     LARGE_INDEX = 101
     SMALL_INDEX = 0
 
@@ -32,7 +32,7 @@ def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright
     elif lap == "mond4":
         csv_path = 'Datasets/driving_log_mond4.csv'
     elif lap == "test":
-        csv_path = 'Datasets/dri2ving_log_test.csv'
+        csv_path = 'Datasets/driving_log_test.csv'
     else:
         print("No dataset loaded")
 
