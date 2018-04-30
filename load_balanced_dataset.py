@@ -52,6 +52,7 @@ def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright
     image = cv2.imread(data_files[camera_angle][0].strip())
     # Transform from BGR to RGB
     image = image[...,::-1]
+    steer = data_files['steer'][0]
 
     counter = 0
 
