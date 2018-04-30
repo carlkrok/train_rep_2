@@ -96,7 +96,7 @@ def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright
     np_steering[0] = steer
 
     index = get_index(steer)
-    np_counter_arrimageay[index] += 1
+    np_counter_array[index] += 1
 
     #######################################################################
 
