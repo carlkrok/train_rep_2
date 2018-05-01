@@ -47,8 +47,8 @@ def cnn_lstm():
 
     top_model = Flatten()(x)
     
-    lstm_layers = LSTM(kernel_regularizer=l2(0.01), recurrent_regularizer=l2(0.01), bias_regularizer=l2(0.01), activity_regularizer=l2(0.01), dropout=0.25, recurrent_dropout=0.25 return_sequences=True)(top_model)
-    lstm_layers = LSTM(kernel_regularizer=l2(0.01), recurrent_regularizer=l2(0.01), bias_regularizer=l2(0.01), activity_regularizer=l2(0.01), dropout=0.25, recurrent_dropout=0.25 return_sequences=False)(lstm_layers)
+    lstm_layers = LSTM(kernel_regularizer=l2(0.01), recurrent_regularizer=l2(0.01), bias_regularizer=l2(0.01), activity_regularizer=l2(0.01), dropout=0.25, recurrent_dropout=0.25, return_sequences=True)(top_model)
+    lstm_layers = LSTM(kernel_regularizer=l2(0.01), recurrent_regularizer=l2(0.01), bias_regularizer=l2(0.01), activity_regularizer=l2(0.01), dropout=0.25, recurrent_dropout=0.25, return_sequences=False)(lstm_layers)
 
     
     # Regression part
