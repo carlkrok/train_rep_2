@@ -69,9 +69,9 @@ def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright
         skip_count += 1
 
     if camera_angle == "left":
-        steer += 0.2
+        steer += 0.15
     elif camera_angle == "right":
-        steer -= 0.2
+        steer -= 0.15
 
     # Change brightness
     if aug_bright:
@@ -119,9 +119,9 @@ def load_dataset(camera_angle,lap, np_counter_array, aug_trans = True,aug_bright
                 continue
 
             if camera_angle == "left":
-                steer += 0.2
+                steer += 0.15
             elif camera_angle == "right":
-                steer -= 0.2
+                steer -= 0.15
 
             index = get_index(steer)
 
